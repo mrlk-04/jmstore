@@ -24,7 +24,7 @@ html, body {
 }
 
 .div1 {
-    height: 80%; /* Ocupa el 80% restante de la altura */
+    height: 82%; /* Ocupa el 80% restante de la altura */
     background-color: rgb(61, 194, 255); /* Color de fondo para diferenciar */
 }
 
