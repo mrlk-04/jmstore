@@ -43,7 +43,7 @@ html, body {
     top: 10px; /* Coloca el h1 en la parte superior */
     left: 50%; /* Centra horizontalmente el h1 */
     transform: translateX(-50%); /* Ajusta el h1 para centrarlo */
-    font-size: 2rem; /* Ajusta el tamaño del texto según sea necesario */
+    font-size: 25px; /* Ajusta el tamaño del texto según sea necesario */
     text-align: center; /* Centra el texto dentro del h1 */
 }
 
