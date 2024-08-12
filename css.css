@@ -12,6 +12,7 @@ html, body{
     text-decoration: none;
 }
 
+
 /* Estilos del nav */
 nav {
     width: 100%;
@@ -81,14 +82,16 @@ nav ul li a:hover {
 
 
 
-.contenido{
-    background-image: url(logo/2.jpeg);
+.contenido {
+    background-image: url('logo/2.jpeg');
     width: 100vw;
-    height: 1000px;
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    background-position: center top; /* Centra la imagen horizontalmente y la alinea al top (superior) */
+    background-position-y: 39%; /* Mueve la imagen un poco hacia arriba desde el centro */
     filter: blur(3px);
 }
+
 
 body {
     display: flex;
