@@ -1,73 +1,120 @@
-html, body {
-    
+/* Estilos globales */
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+* {
     margin: 0;
     padding: 0;
-    height: 100%; /* Asegura que el body y html ocupen el 100% de la altura */
-}
-
-.nav1 {
-    background-color: rgb(52, 93, 104);
-    width: 100%;
-    height: 20%; /* Ocupa el 20% de la altura del body */
-    display: inline-block;
-    border: solid 3px black;
-}
-
-.nav2{
-    background-color: rgb(52, 93, 104);
-    width: 100%;
-    height: 120px; /* Ocupa el 20% de la altura del body */
-    display: inline-block;
-}
-
-.btn1, .btn2, .btn3 {
-    margin-right: 5%;
-    font-size: 15px;
-    float: right;
-    position: relative;
-    top: 80px;
-    background-color: rgb(87, 207, 255);
-    color: black;
-    padding: 5px;
-    border-radius: 10px;
+    box-sizing: border-box;
+    list-style: none;
     text-decoration: none;
 }
 
-.div1 {
-    height: 1000px; /* Ocupa el 80% restante de la altura */
-    background-color: rgb(61, 194, 255); /* Color de fondo para diferenciar */
+/* Estilos del nav */
+nav {
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(52, 93, 104);
+    display: flex;
+    align-items: center;
+    padding: 0; /* Padding para el espacio alrededor del contenido */
+    border: 3px solid black;
+}
+
+/* Estilos para el logo */
+.logo1 {
+    width: 80px;
+    border-radius: 100px;
+    margin: 8px;
+    position: relative;
+    top: 0px;
+    left: 5px;
+}
+
+/* Estilos para el contenedor de la lista */
+ul {
+    display: flex;
+    gap: 6px; /* Espacio entre los elementos del menú */
+    margin-left: auto; /* Empuja el ul a la derecha */
+}
+
+/* Estilos de los elementos del menú */
+nav ul {
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 0; /* Elimina padding por defecto */
+
+    
+}
+
+nav ul li {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos del menú */
+}
+
+nav ul li a {
+    color: white;
+    font-size: 15px;
+    padding: 2px; /* Añade espacio alrededor del texto */
+    border-radius: 8px; /* Bordes redondeados para los botones */
+    background-color: rgb(87, 207, 255);
+    transition: background-color 0.6s ease; /* Transición suave para el cambio de color */
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover para los botones */
+}
+
+/* Opcional: Ajusta el tamaño de la fuente y márgenes si es necesario */
+@media (max-width: 768px) {
+    /* No se necesitan cambios aquí si deseas mantener el diseño igual en todas las pantallas */
+    /* Si deseas ajustar algunos tamaños o márgenes, puedes hacerlo aquí, pero para mantener el diseño igual, deja esto vacío */
+}
+
+
+
+
+
+
+
+.contenido{
     background-image: url(logo/2.jpeg);
+    width: 100vw;
+    height: 1000px;
     background-size: cover;
     background-position: center;
-    filter: blur(4px);
+    filter: blur(3px);
 }
 
-
-.div2{
-width: 30px;
-height: 30px;
-}
-
-.logo1 {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    position: relative;
-    top: 10px;
-    left: 10px;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que el body tenga al menos el alto de la ventana */
+    margin: 0;
 }
 
 .titulo {
+    width: 30%;
+    height:30% ;
+    text-align: center;
+    position: relative;
+    top: -30%;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
     color: white;
-    position: absolute; /* Permite el posicionamiento preciso */
-    top: 10px; /* Coloca el h1 en la parte superior */
-    left: 50%; /* Centra horizontalmente el h1 */
-    transform: translateX(-50%); /* Ajusta el h1 para centrarlo */
-    font-size: 25px; /* Ajusta el tamaño del texto según sea necesario */
-    text-align: center; /* Centra el texto dentro del h1 */
+    width: 100%; /* Opcional: Asegura que el título ocupe todo el ancho */
 }
 
-h1 {
+
+body, h1, nav {
     margin: 0;
     padding: 0;
 }
+
