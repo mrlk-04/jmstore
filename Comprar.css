@@ -183,10 +183,10 @@ body, h1, nav {
 .btnterminar{
     position: relative;
     top: 270px;
-    left: -340px;
+    left: -280px;
     text-align: center;
     width: 160px;
-    height: 30px;
+    height: 48px;
     color: rgb(253, 253, 253);
     background-color: rgb(94, 255, 0);
     color: black;
