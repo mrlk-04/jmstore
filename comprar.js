@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mensaje += `\nMi dirección es : ${direccionCliente}\nMi ciudad es : ${ciudadCliente}`;
 
         // Mostrar el mensaje en una ventana de alerta
-        alert(mensaje += '\n \n \nSi tiene inconvenientes comuniquese al +57 3147012339');
+        alert(mensaje);
 
         // Enviar datos a WhatsApp
         const telefono = '573215566771'; // Cambia esto al número de WhatsApp real
