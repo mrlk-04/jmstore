@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ciudadCliente = prompt('Por favor, ingrese su ciudad:');
 
         // Crear el mensaje
-        let mensaje = `Holaa Jm, ¿Qué tal? Soy ${nombreCliente}, quiero hacer una compra de:\n\n`;
+        let mensaje = `Holaa Jm Store, ¿Qué tal? Soy ${nombreCliente}, quiero hacer una compra de:\n\n`;
         productos.forEach(p => {
             mensaje += `${p.nombre}: ${p.cantidad}\n`;
         });
