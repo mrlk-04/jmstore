@@ -134,7 +134,7 @@ body, h1, nav {
     gap: 10px; /* Espacio entre los divs, opcional */
 }
 
-.divcollar, .divbolso {
+.divcollar{
     z-index: -0.5;
     background-color: rgb(87, 207, 255);
     width: 150px;
@@ -150,13 +150,42 @@ body, h1, nav {
     box-sizing: border-box; /* Incluye el padding en el ancho y alto del div */
 }
 
-.collares, .bolso {
+.divbolso{
+    z-index: -0.5;
+    background-color: rgb(87, 207, 255);
+    width: 150px;
+    height: 230px;
+    border-radius: 15px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos hijos se apilen verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente dentro del contenedor */
+    justify-content: center; /* Centra los elementos verticalmente dentro del contenedor */
+    text-align: center; /* Centra el texto dentro del div */
+    padding: 1px; /* Opcional, para agregar espacio interno */
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto del div */
+}
+
+.collares {
     max-width: 100%;  /* Asegúrate de que la imagen no exceda el ancho del contenedor */
     max-height: 100%; /* Asegúrate de que la imagen no exceda la altura del contenedor */
     width: auto;      /* Ajusta el tamaño automáticamente según el contenedor */
     height: auto;     /* Ajusta el tamaño automáticamente según el contenedor */
     border: solid 1px black;
     border-radius: 10px;
+}
+
+.bolso{
+    max-width: 100%;  /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+    max-height: 100%; /* Asegúrate de que la imagen no exceda la altura del contenedor */
+    width: 90%;      /* Ajusta el tamaño automáticamente según el contenedor */
+    height: 100%;     /* Ajusta el tamaño automáticamente según el contenedor */
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.cantidad{
+    width: 130px;
 }
 
 .divcollar h4, .divbolso h4 {
