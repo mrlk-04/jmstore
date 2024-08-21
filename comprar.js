@@ -61,21 +61,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const ciudadCliente = prompt('Por favor, ingrese su ciudad:');
 
         // Crear el mensaje
-        let mensaje = `Holaa Jm Store, ¿Qué tal? Soy ${nombreCliente}, quiero hacer una compra de:\n\n`;
+        let mensaje = `Holaa, ¿Qué tal? Soy ${nombreCliente}, quiero hacer una compra de:\n\n`;
         productos.forEach(p => {
             mensaje += `${p.nombre}: ${p.cantidad}\n`;
         });
-        mensaje += `\nMi dirección es : ${direccionCliente}\nMi ciudad es : ${ciudadCliente}`;
+        mensaje += `\nMi dirección es: ${direccionCliente}\nMi ciudad es: ${ciudadCliente}`;
 
         // Mostrar el mensaje en una ventana de alerta
-        alert(mensaje);
+        alert(mensaje + '\n\nSi tiene inconvenientes, comuníquese al +57 3147012339');
 
-        // Enviar datos a WhatsApp
-        const telefono = '573215566771'; // Cambia esto al número de WhatsApp real
-        const mensajeWhatsApp = encodeURIComponent(mensaje);
-        const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeWhatsApp}`;
-        
-        window.open(urlWhatsApp, '_blank');
+        // Intentar abrir la ventana de WhatsApp
+        try {
+            const telefono = '573215566771'; // Número de WhatsApp en formato internacional
+            const mensajeWhatsApp = encodeURIComponent(mensaje);
+            const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeWhatsApp}`;
+            window.open(urlWhatsApp, '_blank');
+        } catch (error) {
+            alert('No se pudo abrir la ventana de WhatsApp. Por favor, permite ventanas emergentes en tu navegador.');
+        }
     });
 
     // Inicializar el estado de los botones
