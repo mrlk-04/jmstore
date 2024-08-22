@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         mensaje += `\nMi dirección es: ${direccionCliente}\nMi ciudad es: ${ciudadCliente}`;
 
         // Mostrar el mensaje en una ventana de alerta
-        alert(mensaje');
+        alert(mensaje + '\n\nSi tiene inconvenientes, comuníquese al +57 3147012339');
 
         // Intentar abrir la ventana de WhatsApp
         try {
-            const telefono = '573147012392'; // Número de WhatsApp en formato internacional
+            const telefono = '573215566771'; // Número de WhatsApp en formato internacional
             const mensajeWhatsApp = encodeURIComponent(mensaje);
             const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeWhatsApp}`;
             window.open(urlWhatsApp, '_blank');
