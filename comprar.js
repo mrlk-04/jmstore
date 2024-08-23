@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Intentar abrir la ventana de WhatsApp
         try {
-            const telefono = '573215566771'; // Número de WhatsApp en formato internacional
+            const telefono = '573147012339'; // Número de WhatsApp en formato internacional
             const mensajeWhatsApp = encodeURIComponent(mensaje);
             const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeWhatsApp}`;
             window.open(urlWhatsApp, '_blank');
