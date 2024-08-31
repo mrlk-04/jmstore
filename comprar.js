@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Variables para almacenar los datos de los productos
     const productos = [];
 
-    // Función para actualizar el estado del botón "Comprar"
     function actualizarBotones() {
         document.querySelectorAll('.cantidad').forEach((input) => {
             const cantidad = parseInt(input.value, 10);
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para agregar productos
     function agregarProducto(nombre, cantidad) {
         const producto = productos.find(p => p.nombre === nombre);
         if (producto) {
@@ -27,14 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Event listener para los inputs de cantidad
-    document.querySelectorAll('.cantidad').forEach(input => {
-        input.addEventListener('input', () => {
+    function mostrarCarrito() {
+        let mensaje = `Tu carrito de compras contiene:\n\n`;
+        productos.forEach(p => {
+            mensaje += `- ${p.nombre}: ${p.cantidad}\n`;
+        });
+
+        alert(mensaje);
+    }
+
+    document.querySelectorAll('.btn-mas').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const input = boton.previousElementSibling;
+            input.value = parseInt(input.value, 10) + 1;
             actualizarBotones();
         });
     });
 
-    // Event listener para los botones "Comprar"
+    document.querySelectorAll('.btn-menos').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const input = boton.nextElementSibling;
+            const cantidadActual = parseInt(input.value, 10);
+            if (cantidadActual > 0) {
+                input.value = cantidadActual - 1;
+            }
+            actualizarBotones();
+        });
+    });
+
     document.querySelectorAll('.btn-comprar').forEach(boton => {
         boton.addEventListener('click', (e) => {
             e.preventDefault();
@@ -46,41 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 agregarProducto(nombre, cantidad);
                 producto.querySelector('.cantidad').value = '0';
                 actualizarBotones();
+                
+                // Mostrar el carrito después de agregar el producto
+                mostrarCarrito();
             }
         });
     });
 
-    // Event listener para el botón "Terminar compra"
     document.querySelector('.btnterminar').addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Solicitar información del usuario
-        const nombreCliente = prompt('Por favor, ingrese su nombre y apellido:');
-        const telefonoCliente = prompt('Por favor, ingrese su número de teléfono:');
-        const direccionCliente = prompt('Por favor, ingrese su dirección:');
-        const ciudadCliente = prompt('Por favor, ingrese su ciudad:');
+        const datosCliente = prompt('Por favor, ingrese su (nombre y apellido, ciudad y dirección), separados por comas: ');
+        const [nombreCliente, ciudadCliente, direccionCliente] = datosCliente.split(',').map(dato => dato.trim());
 
-        // Crear el mensaje
         let mensaje = `Holaa, ¿Qué tal? Soy ${nombreCliente}, quiero hacer una compra de:\n\n`;
         productos.forEach(p => {
-            mensaje += `${p.nombre}: ${p.cantidad}\n`;
+            mensaje += `- ${p.nombre}: ${p.cantidad}\n`;
         });
-        mensaje += `\nMi dirección es: ${direccionCliente}\nMi ciudad es: ${ciudadCliente}`;
 
-        // Mostrar el mensaje en una ventana de alerta
-        alert(mensaje + '\n\nSi tiene inconvenientes, comuníquese al +57 3147012339');
+        mensaje += `\nMis datos de envío son:\nCiudad: ${ciudadCliente}\nDirección: ${direccionCliente}`;
 
-        // Intentar abrir la ventana de WhatsApp
-        try {
-            const telefono = '573147012339'; // Número de WhatsApp en formato internacional
-            const mensajeWhatsApp = encodeURIComponent(mensaje);
-            const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeWhatsApp}`;
-            window.open(urlWhatsApp, '_blank');
-        } catch (error) {
-            alert('No se pudo abrir la ventana de WhatsApp. Por favor, permite ventanas emergentes en tu navegador.');
-        }
+        window.open(`https://wa.me/573147012339?text=${encodeURIComponent(mensaje)}`, '_blank');
     });
 
-    // Inicializar el estado de los botones
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.querySelector('nav ul').classList.toggle('active');
+    });
+
     actualizarBotones();
 });
