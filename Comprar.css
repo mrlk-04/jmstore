@@ -201,18 +201,18 @@ body, h1, nav {
 
 .divcollar {
     margin-left: 20px; /* Ajusta el espacio a la derecha de .divcollar */
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .divbolso {
     margin-left: 20px; /* Ajusta el espacio a la izquierda de .divbolso */
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
-.btnterminar{
+.btnterminar {
     position: relative;
-    top: 270px;
-    left: -250px;
+    top: 250px; /* Ajusta la posición verticalmente */
+    left: -300px; /* Mantiene el botón centrado horizontalmente */
     text-align: center;
     width: 160px;
     height: 48px;
@@ -222,4 +222,44 @@ body, h1, nav {
     padding: 5px;
     text-decoration: none;
     border-radius: 10px;
+    margin: 20px auto; /* Centra el botón horizontalmente */
+    display: block; /* Asegura que ocupe toda la línea disponible */
+}
+
+
+
+
+
+
+
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.control .btn-menos,
+.control .btn-mas {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control .cantidad {
+    width: 50px;
+    text-align: center;
+    border: none;
+    background-color: white;
+    margin: 0 5px;
+    font-size: 16px;
 }
