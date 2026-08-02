@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM Store</title>
+    <link rel="stylesheet" href="templatemo-noir-fashion.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- 
+TemplateMo 599 Noir Fashion
+https://templatemo.com/tm-599-noir-fashion
+-->
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+            <img src="https://res.cloudinary.com/dgfyop1vh/image/upload/v1784324761/logo_rj3d4u.jpg" 
+                alt="Logo JM Store" 
+                style="width: 45px; height: 45px; padding-right: 2%;">
+            <span class="logo-text"> JM Store</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="categorias.html" class="nav-link active">Categorias</a></li>
+                <li><a href="#featured" class="nav-link">Presentado</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+                <li><a href="https://wa.me/573238863120" class="nav-cta">Whatsapp</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="#featured">Presentado</a></li>
+            <li><a href="https://wa.me/573238863120">Whatsapp</a></li>
+        </ul>
+    </div>
+
+
+    <section class="collections" id="collections">
+        <div class="section-header">
+            <h2 class="section-title">Ultimas colecciones</h2>
+            <p class="section-subtitle">Explora nuestras diferentes categorias</p>
+        </div>
+        
+        <div class="category-tabs" id="categoryTabs">
+            
+        </div>
+
+        <div class="grid" id="collectionsGrid">
+            
+        </div>
+    </section>
+
+
+
+
+
+    <!-- modal de producto moderno con carrusel -->
+    <div class="modal-overlay" id="productomodal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="cerrarmodal()">&times;</span>
+            
+            <div class="modal-carousel">
+                <button class="carousel-btn prev-btn" onclick="cambiarimagen(-1)">&#10094;</button>
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="producto jm store">
+                </div>
+                <button class="carousel-btn next-btn" onclick="cambiarimagen(1)">&#10095;</button>
+            </div>
+
+            <div class="modal-info">
+                <h2 class="modal-title" id="modal-titulo">nombre del producto</h2>
+                <div class="modal-price" id="modal-precio">$0</div>
+                <p class="modal-desc" id="modal-desc"></p>
+                <!-- aquí cambiamos el botón para que agregue al carrito -->
+                <button class="modal-btn" id="btn-agregar-carrito" onclick="agregaralcarrito()">
+                    <i class="bi bi-cart-plus"></i> agregar al carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- botón flotante del carrito -->
+    <div class="cart-floating-btn" onclick="abrircarrito()">
+        <i class="bi bi-cart3"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <!-- modal del carrito -->
+    <div class="modal-overlay" id="carritomodal">
+        <div class="modal-content cart-content">
+            <span class="modal-close" onclick="cerrarcarrito()">&times;</span>
+            <h2 style="margin-top: 0;">tu carrito</h2>
+            <div id="cart-items" class="cart-items-container">
+                <!-- los productos se dibujarán aquí -->
+            </div>
+            <div class="cart-total">
+                total: <span id="cart-total-price">$0</span>
+            </div>
+            <button class="modal-btn" onclick="enviarpedidowhatsapp()">
+                <i class="bi bi-whatsapp"></i> finalizar compra
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>JM STORE</h3>
+                <p>Redefinimos la sofisticación integrando tecnología, moda y diseño consciente. Elevamos tu estilo diario hacia un estándar de exclusividad inigualable.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/573238863120" class="social-link"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/jm_store.sncljo/" class="social-link"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="tel:+573238863120">Telefono</a></li>
+                    <li><a href="https://wa.me/573238863120">Whatsapp</a></li>
+                    <li><a href="https://www.instagram.com/jm_store.sncljo/">Instagram</a></li>
+                    <li><a href="#">Tiktok</a></li>
+                    <li><a href="#">Pqr</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>JM store</h4>
+                <ul>
+                    <li><a href="#">Informacion de envio</a></li>
+                    <li><a href="#">Guia de compra</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Garantias</a></li>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 JM STORE. todos los derechos reservados.</p>
+            <div class="payment-methods">
+                <h3>Metodos de pago</h3>
+                <div class="payment-icon">Nequi</div>
+                <div class="payment-icon">Daviplata</div>
+                <div class="payment-icon">TransfiYa</div>
+                <div class="payment-icon">Efectivo</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="templatemo-noir-scripts.js"></script>
+</body>
+</html>
